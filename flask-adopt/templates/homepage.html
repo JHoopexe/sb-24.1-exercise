@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pets</h1>
+    {% for p in pet %}
+    <div>
+        {% if p.available == True %}
+            {% if p.photo_url %}
+            <img src="{{p.photo_url}}"
+            <p></p>
+            {% endif %}
+            <p><a href="/{{p.id}}">{{p.name}}</a> <b>is available!</b></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <form action="/add">
+        <button>Add a Pet</button>
+    </form>
+</body>
+</html>
